@@ -102,8 +102,11 @@ d3.tsv("data/salaryData.txt")
   }; 
 })
 .get(function(error, data) {  
+  if (error) return console.warn(error);
+  console.log(data[1]);
   //load variable names
-  d3.tsv("data/varLabels.txt", function(error, varInfo) {
+  d3.tsv("data/varLabels.txt", function(error2, varInfo) {
+    if (error) return console.warn(error2);
     console.log(varInfo);
     //Use "data" as dataset variable and "varInfo" for variable labels.
     //load data
